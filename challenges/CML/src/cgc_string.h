@@ -61,7 +61,7 @@ class InternedComparator
 public:
     static inline unsigned int hash(const String *s)
     {
-        intptr_t p = reinterpret_cast<intptr_t>(s);
+        int64_t p = reinterpret_cast<int64_t>(s);
         return (p * 761886451) ^ (p << 16);
     }
     static inline bool equals(const String *a, const String *b)

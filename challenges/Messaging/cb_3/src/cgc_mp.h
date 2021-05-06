@@ -68,7 +68,7 @@ case cls::selector: { \
     type name = __args[__nused_args++];
 #define NEW_CONTEXT(clsctx) do { \
     ctx = new clsctx; \
-    self.d_id = (int) ctx; \
+    self.d_id = (long long int) ctx; \
 } while (0)
 #define CONTINUE(...) do { \
     if (__next.d_fd > 0) MsgSend1(__next, __next_selector, ## __VA_ARGS__); \

@@ -32,7 +32,7 @@
 
 blub::blub(char* _author, char* data)
 {
-  id = (uint32_t)this;
+  id = (uint64_t)this;
 
   cgc_size_t l = cgc_strlen(_author);
   cgc_strncpy(username, _author, l);

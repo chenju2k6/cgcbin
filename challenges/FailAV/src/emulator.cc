@@ -31,7 +31,7 @@ Emulator::Emulator(void *sp, void *heap)
 {
     cgc_memset(d_reg, 0, sizeof(d_reg));
     cgc_memset(d_dirty_pages, 0, sizeof(d_dirty_pages));
-    d_reg[REG_sp] = (int)sp + STACK_SIZE;
+    d_reg[REG_sp] = (int64_t)sp + STACK_SIZE;
     d_zf = 0;
     d_cf = 0;
 }
@@ -51,7 +51,7 @@ void Emulator::reset()
     // Reset registers
     cgc_memset(d_reg, 0, sizeof(d_reg));
     cgc_memset(d_dirty_pages, 0, sizeof(d_dirty_pages));
-    d_reg[REG_sp] = (int)d_stack + STACK_SIZE;
+    d_reg[REG_sp] = (int64_t)d_stack + STACK_SIZE;
     d_zf = 0;
     d_cf = 0;
 }
